@@ -2,7 +2,7 @@ package test
 
 import (
         "testing"
-	"strings"
+	//"strings"
         "fmt"
 	"github.com/gruntwork-io/terratest/modules/aws"
         "github.com/gruntwork-io/terratest/modules/terraform"
@@ -25,7 +25,7 @@ func TestTerraformAwsExample(t *testing.T) {
         terraform.InitAndApply(t, terraformOptions)
         instanceKey := terraform.Output(t, terraformOptions, "instance-key")
         //fmt.Printf("%s\n", instanceKey)
-	instanceKey = strings.Replace(instanceKey, "\n", "", -1)
+	//instanceKey = strings.Replace(instanceKey, "\n", "", -1)
 	assert.Equal(t, expectedKey, instanceKey)
 
 	//Tags
@@ -39,4 +39,3 @@ func TestTerraformAwsExample(t *testing.T) {
 	assert.Equal(t, "testtera", nameTag)
 }
 
-func 
