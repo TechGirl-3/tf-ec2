@@ -10,6 +10,7 @@ import (
 )
 
 func TestTerraformHelloWorldExample(t *testing.T) {
+	sshkey := "check"
 	terraformOptions := &terraform.Options{
 		TerraformDir: "../examples",
 	}
@@ -24,5 +25,7 @@ func TestTerraformHelloWorldExample(t *testing.T) {
 		log.Fatal(err)
 	}
 	output = re.ReplaceAllString(output, "")
-	assert.Equal(t, "check", output)
+	assert.Equal(t, sshkey, output)
+
+
 }
